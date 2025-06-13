@@ -1,10 +1,15 @@
 ﻿using System;
+using SortMergeJoin;
 
-class Program
+public class Program
 {
-    public static void Main()
+    public static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        var op = new Operador("uva.csv", "vinho.csv", "uva_id", "uva_id");
+        op.Executar();
+
+        Console.WriteLine($"#IOs: {op.NumIOExecutados()}");
+        Console.WriteLine($"#Tups: {op.NumTuplasGeradas()}");
     }
 }
 
